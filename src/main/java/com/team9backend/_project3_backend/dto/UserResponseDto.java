@@ -9,6 +9,7 @@ public class UserResponseDto {
     private String role;
     private Boolean isActive;
 
+
     public UserResponseDto() {}
 
     public UserResponseDto(Long userId, String username, String email,

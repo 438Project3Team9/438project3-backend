@@ -3,6 +3,7 @@ package com.team9backend._project3_backend.models;
 import jakarta.persistence.*;
 import java.time.Instant;
 
+
 @Entity
 @Table(name = "users")
 public class User {
