@@ -1,6 +1,8 @@
 package com.team9backend._project3_backend.models;
 
 import jakarta.persistence.*;
+
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
@@ -18,7 +20,7 @@ public class Expense {
     private Long categoryId;
 
     @Column(nullable = false)
-    private Double amount;
+    private BigDecimal amount;
 
     @Column(name = "currency_code", length = 3)
     private String currencyCode = "USD"; // Defaulting to USD
@@ -52,8 +54,8 @@ public class Expense {
     public void setUserId(Long userId) { this.userId = userId; }
     public Long getCategoryId() { return categoryId; }
     public void setCategoryId(Long categoryId) { this.categoryId = categoryId; }
-    public Double getAmount() { return amount; }
-    public void setAmount(Double amount) { this.amount = amount; }
+    public BigDecimal  getAmount() { return amount; }
+    public void setAmount(BigDecimal  amount) { this.amount = amount; }
     public String getCurrencyCode() { return currencyCode; }
     public void setCurrencyCode(String currencyCode) { this.currencyCode = currencyCode; }
     public String getMerchantName() { return merchantName; }
