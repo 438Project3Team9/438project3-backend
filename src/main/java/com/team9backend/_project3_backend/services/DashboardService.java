@@ -55,7 +55,7 @@ public class DashboardService {
         );
 
         BigDecimal monthlyBudget = budgetRepository
-                .findByUser_UserIdAndYearAndMonth(user.getUserId(), year, month)
+                .findByUserIdAndYearAndMonth(user.getUserId(), year, month)
                 .map(Budget::getAmountLimit)
                 .orElse(BigDecimal.ZERO);
 
