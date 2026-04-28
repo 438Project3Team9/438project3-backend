@@ -10,6 +10,9 @@ import java.util.List;
 
 public interface ExpenseRepository extends JpaRepository<Expense, Long> {
 
+    // This  method allows to fetch all expenses for a specific user
+    List<Expense> findByUserId(Long userId);
+
     List<Expense> findRecentExpensesByUserId(Long userId);
 
     @Query("""
