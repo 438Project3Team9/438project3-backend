@@ -4,6 +4,7 @@ import com.team9backend._project3_backend.models.Expense;
 import com.team9backend._project3_backend.repositories.ExpenseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.Optional;
 import java.util.List;
 
 @Service
@@ -18,6 +19,10 @@ public class ExpenseService {
 
     public List<Expense> getExpensesByUserId(Long userId) {
         return expenseRepository.findByUserId(userId);
+    }
+
+    public Optional<Expense> getExpenseById(Long id) {
+        return expenseRepository.findById(id);
     }
 
     public Expense saveExpense(Expense expense) {
