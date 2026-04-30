@@ -12,6 +12,14 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+                .csrf(csrf -> csrf.disable()) // can delete
+                .authorizeHttpRequests(auth -> auth.anyRequest().permitAll()); // can delete
+
+        return http.build(); // can delete
+    }
+}
+            /*   // vv push this up to bring back oauth vv
+
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/", "/error").permitAll()
                 .anyRequest().authenticated()
@@ -21,3 +29,5 @@ public class SecurityConfig {
         return http.build();
     }
 }
+
+                */
