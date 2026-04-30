@@ -5,7 +5,7 @@ import java.time.Instant;
 
 
 @Entity
-@Table(name = "users")
+@Table(name = "\"User\"")
 public class User {
 
     @Id
