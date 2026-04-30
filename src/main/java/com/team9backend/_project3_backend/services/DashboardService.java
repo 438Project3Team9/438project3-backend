@@ -106,7 +106,7 @@ public class DashboardService {
                 expense.getAmount(),
                 expense.getMerchantName(),
                 expense.getDescription(),
-                expense.getExpenseDate()
+                expense.getExpenseDate().toLocalDateTime()
         );
     }
 }
