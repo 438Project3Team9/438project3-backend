@@ -2,6 +2,7 @@ package com.team9backend._project3_backend.models;
 
 import jakarta.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "budgets")
@@ -15,6 +16,10 @@ public class Budget {
     @Column(name = "user_id", nullable = false)
     private Long userId;
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "category_id")
+    private int category_id;
+
     @Column(nullable = false)
     private Integer year;
 
@@ -23,6 +28,12 @@ public class Budget {
 
     @Column(name = "amount_limit", nullable = false)
     private BigDecimal amountLimit;
+
+    @Column(name = "created_at", updatable = false)
+    private LocalDateTime createdAt = LocalDateTime.now();
+
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt = LocalDateTime.now();
 
     public Budget() {}
 
